@@ -46,16 +46,14 @@ const PokemonDetailInformation = ({
   const randomAttack = Math.floor(Math.random() * 50) + 10;
   const randomSpeed = Math.floor(Math.random() * 70) + 10;
 
-  const prevPoke = () => history.push(`/pokemon/${+id - 1}`);
+  const prevPokemon = () => history.push(`/pokemon/${+id - 1}`);
 
-  const prevNext = () => history.push(`/pokemon/${+id + 1}`);
+  const nextPokemon = () => history.push(`/pokemon/${+id + 1}`);
 
   return (
     <div className="pokemon-arrow-container">
-      {id === 1 ? (
-        <ArrowPrev prevPoke={prevPoke} />
-      ) : id > 1 ? (
-        <ArrowPrev prevPoke={prevPoke} />
+      {id > 1 ? (
+        <ArrowPrev prevPoke={prevPokemon} />
       ) : (
         ""
       )}
@@ -65,17 +63,10 @@ const PokemonDetailInformation = ({
           <span> #{newId}</span>
         </p>
         <div className="arrows-wrapper">
-          {id === 1 ? (
+          { id > 1 ? (
             <img
-              onClick={prevPoke}
-              className="arrowResLeft"
-              src={backArrow}
-              alt="backArrow"
-            />
-          ) : id > 1 ? (
-            <img
-              onClick={prevPoke}
-              className="arrowResLeft"
+              onClick={prevPokemon}
+              className="backArrow"
               src={backArrow}
               alt="backArrow"
             />
@@ -84,8 +75,8 @@ const PokemonDetailInformation = ({
           )}
           {id < 10107 && (
             <img
-              onClick={prevNext}
-              className="arrowResRight"
+              onClick={nextPokemon}
+              className="nextArrow"
               src={nextArrow}
               alt="nextArrow"
             />
@@ -194,7 +185,7 @@ const PokemonDetailInformation = ({
           </div>
         </div>
       </div>
-      {id < 10107 && <ArrowNext prevNext={prevNext} />}
+      {id < 10107 && <ArrowNext prevNext={nextPokemon} />}
     </div>
   );
 };
