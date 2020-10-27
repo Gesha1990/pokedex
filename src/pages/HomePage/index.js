@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { getPokemonsName, getTypesPokemon } from '../../modules/session/session-actions'
-import { categoryFilter } from '../../components/HomePageComponents/categoryFilter/index'
+import { categoryFilter } from '../../components/categoryFilter/index'
 import { PokemonCard } from '../../components/index'
 import { Layout, Input, Row, Col, Checkbox, Dropdown, Button, Menu, Pagination } from 'antd'
 import { DownOutlined } from '@ant-design/icons'
@@ -45,7 +45,7 @@ const menuDropDowns = (
   <Menu>
     <Item>
       {categoryFilter.map((i, ind) => (
-        <Col className='widthCheckbox' key={ind}>
+        <Col className='checkbox-wrapper' key={ind}>
           <Checkbox onClick={() => categorySearch(ind + 1)}>{i}</Checkbox>
         </Col>
       ))}
@@ -63,25 +63,25 @@ const onChangePage = page => {
 
   return (
     <Layout>
-      <Layout className='wrapperContentWidth'>
+      <Layout className='home-page-wrapper'>
         <Content>
             <Col className='siderBlockNon'>
               <Row className='widthSider'>
-                <Col className='widthSiderTypes'>
+                <Col className='type-dropdown-wrapper'>
                   <Dropdown overlay={menuDropDowns}>
                     <p className="ant-dropdown-link" >
                       Tипы <DownOutlined />
                     </p>
                   </Dropdown>
                 </Col>
-                <Col className='widthDropdown'>
+                <Col className='pokemons-number-dropdown-wrapper'>
                   <Dropdown overlay={menu}>
                     <Button>
                       {itemNumber} <DownOutlined />
                     </Button>
                   </Dropdown>
                 </Col>
-                <Col className='widthSearch'>
+                <Col className='search-wrapper'>
                   <Search 
                     placeholder='Search Pokemon' 
                     onSearch={value => setSearchNamePokemons(value)} 
@@ -90,7 +90,7 @@ const onChangePage = page => {
                 </Col>
               </Row>
             </Col>
-          <Col className='cardsWidthPokemons'>
+          <Col className='pokemons-container'>
             {pokemonSearch().length ? pokemonSearch().map((i, ind) => <PokemonCard {...i} key={ind} />) : <h1>No results</h1>}
           </Col>
           <Row>

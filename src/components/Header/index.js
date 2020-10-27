@@ -8,9 +8,9 @@ const Header = () => {
   const history = useHistory()
 
   return (
-   <Row className='widthHeader'>
+   <Row className='header-wrapper'>
      <Col>
-        <div className='headerLogo' onClick={() => history.push(`/`)}>
+        <div className='header-wrapper__logo' onClick={() => history.push(`/`)}>
           <span>P</span>
           <img src={logo} alt='headerlogo' />
           kedex

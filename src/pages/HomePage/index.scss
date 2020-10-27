@@ -1,64 +1,78 @@
-.cardsWidthPokemons {
-  display: flex !important;
-  flex-direction: row;
-  justify-content: space-around;
-  flex-wrap: wrap;
-}
-
-.widthCheckbox {
-
-  .ant-checkbox-wrapper {
-    color: black;
-    font-weight: bold;
-  }
-}
-
-.widthPagination {
-  margin: 0 auto;
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
-
-.wrapperContentWidth {
+.home-page-wrapper {
   max-width: 100%;
   height: 100%;
-}
-
-.widthSider {
-  margin-top: 20px;
-  margin-left: 20px;
-}
-
-.widthSiderTypes {
-  margin-right: 10px;
-  margin-top: 4px;
-}
-
-.widthDropdown {
-  margin-right: 10px;
-}
-
-@media screen and (min-width:100px) and (max-width:750px) {
-  .wrapperContentWidth {
+  .pokemons-container {
     display: flex !important;
-    flex-direction: column !important;
-
-    .widthSider {
-      display: flex;
-      margin-top: 10px;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+  .widthSider {
+    margin-top: 20px;
+    margin-left: 20px;
+  }
+  .type-dropdown-wrapper {
+    cursor: pointer;
+    margin-right: 10px;
+    border: 1px solid #d9d9d9;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    padding: 0 5px;
+    &:hover{
+      border: 1px solid #40a9ff;
+      color:#40a9ff;
+    }
+    p{
+      margin-bottom: 0;
+     
     }
   }
- }
-
- @media screen and (min-width:100px) and (max-width:790px) {
   
-  .widthContentPokemon {
-    margin-left: 0px;
+  .pokemons-number-dropdown-wrapper {
+    margin-right: 10px;
   }
+  
+  @media screen and (min-width:100px) and (max-width:750px) {
+    .wrapperContentWidth {
+      display: flex !important;
+      flex-direction: column !important;
+  
+      .widthSider {
+        display: flex;
+        margin-top: 10px;
+      }
+    }
+   }
+  
+   @media screen and (min-width:100px) and (max-width:790px) {
+    
+    .widthContentPokemon {
+      margin-left: 0px;
+    }
+  
+    .flexContentWidth {
+      padding: 0 10px;
+    }
+   }
+   .checkbox-wrapper {
+    .ant-checkbox-wrapper {
+      color: black;
+      font-weight: bold;
+    }
+    &:hover{
+      cursor: pointer;
+    }
+  }
+  
+  .widthPagination {
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+}
 
-  .flexContentWidth {
-    padding: 0 10px;
-  }
- }
+
+
 
 

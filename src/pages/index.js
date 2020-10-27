@@ -1,2 +1,2 @@
 export { default as HomePage } from './HomePage'
-export { default as SpecificationsPokemons } from  './TooPage'
+export { default as PokemonPage } from  './PokemonPage'

@@ -1,4 +1,4 @@
-.widthHeader {
+.header-wrapper {
   display: flex !important;
   justify-content: center !important;
   height: 50px !important;
@@ -7,7 +7,7 @@
   font-size: 30px;
   background-color: mediumslateblue;
 
-  .headerLogo {
+  &__logo{
     display: flex;
     justify-content: center;
     align-items: center;

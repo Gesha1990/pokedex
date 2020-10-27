@@ -2,10 +2,11 @@ import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { getDataPokemon, getGenderPokemon } from '../../modules/session/session-actions'
-import { InformationPokemon } from '../../components/index'
+import  PokemonDetailInformation  from '../../components/PokemonDetailInformation/index'
+import Spinner from '../../components/common/spinner/index.js'
 import './index.scss'
 
-const SpecificationsPokemons = () => {
+const PokemonPage = () => {
   const [pokemon, setPokemon] = useState({})
   const [genderPokemonFemale, setGenderPokemonFemale] = useState({})
   const [genderPokemonMale, setGenderPokemonMale] = useState({})
@@ -52,9 +53,9 @@ const SpecificationsPokemons = () => {
   }
 
   return (
-    <div className='widthSpecificationsPokemons'>
+    <div className='pokemons-page-wrapper'>
       {pokemon.name ? (
-        <InformationPokemon 
+        <PokemonDetailInformation 
           nameGenderless={nameGenderless} 
           nameMale={nameMale} 
           nameFemale={nameFemale} 
@@ -63,9 +64,9 @@ const SpecificationsPokemons = () => {
           pokemonIMG={pokemonIMG} 
           id={id}
         />
-      ) : <h1>Loading.....</h1>}
+      ) : <Spinner/>}
     </div>
   )
 }
 
-export default SpecificationsPokemons
+export default PokemonPage

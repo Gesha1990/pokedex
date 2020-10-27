@@ -1,4 +1,4 @@
-import { HomePage, SpecificationsPokemons } from '../../pages/index'
+import { HomePage, PokemonPage } from '../../pages/index'
 
 export const unauthorized = [
   {
@@ -8,7 +8,7 @@ export const unauthorized = [
   },
   {
     path: '/pokemon/:id',
-    component: SpecificationsPokemons,
+    component: PokemonPage,
     exact: true,
   },
 ]

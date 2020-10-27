@@ -1,0 +1,9 @@
+.spinner{
+  position: fixed;
+  z-index: 1;
+  left: 50%;
+  bottom: 40%;
+  height: 200px;
+  width: 200px;
+  transform: translate(-50%, 0);
+}

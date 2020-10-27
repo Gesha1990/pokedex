@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 import { useHistory } from 'react-router-dom'
-import { getDataPokemon } from '../../../modules/session/session-actions'
+import { getDataPokemon } from '../../modules/session/session-actions'
 import { Tag } from 'antd'
-import logoErrorDefault from '../../../img/error.png'
+import logoErrorDefault from '../../img/error.png'
 import './index.scss'
 
 const colorTypes = {
@@ -42,14 +42,14 @@ const PokemonCard = ({ name, url }) => {
   }, [dispatch, id])
 
   return (
-    <div onClick={() => history.push(`/pokemon/${id}`)} className='cardWidthPokemons fade'>
-      <div className='imgWidthPokemons'>
+    <div onClick={() => history.push(`/pokemon/${id}`)} className='pokemons-card'>
+      <div className='pokemons-card__img-wrapper'>
         <img src={POKEMONS_IMG} alt={name} onError={e => e.target.src = logoErrorDefault} />
       </div>
-      <div className='pokemonsID'>#{idPokemons}</div>
-      <div className='pokemonsName'>{name}</div>
-      <div className='typeTest'>
-        {typeNamePokemons.map((i, ind) => <Tag className='pokemonsType' color={colorTypes[i.type.name]} key={ind}>{i.type.name}</Tag>)} 
+      <div className='pokemons-card__id'>#{idPokemons}</div>
+      <div className='pokemons-card__name'>{name}</div>
+      <div className='pokemons-card__type'>
+        {typeNamePokemons.map((i, ind) => <Tag className='pokemons-card__type-name' color={colorTypes[i.type.name]} key={ind}>{i.type.name}</Tag>)} 
       </div>
     </div>
   )
